@@ -1,0 +1,196 @@
+
+//Latihan
+
+public static void main(String[] args) {
+        s1();
+        s2();
+        s3();
+        s4();
+        no1();
+        no2();
+        no3();
+        no4();
+    }
+
+    public static void s1() {
+        String cari;
+        System.out.println("----Praktikum 1----");
+        boolean found = false;
+        String[] data = new String[]{"10", "20", "30", "40", "50", "60", "70", "80", "90", "100"};
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Masukkan data yang ingin dicari = ");
+        cari = sc.nextLine();
+
+        for (String data1 : data) {
+            if (cari.equals(data1)) {
+                found = true;
+                break;
+            }
+        }
+        if (found == true) {
+            System.out.println("Data ditemukan!");
+        } else {
+            System.out.println("Maaf, Data tidak ditemukan");
+        }
+    }
+
+    public static void s2() {
+        int cari;
+        System.out.println("\n----Praktikum 2----");
+        boolean found = false;
+        int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Masukkan nilai yang ingin anda cari = ");
+        cari = sc.nextInt();
+        for (int i = 0; i < data.length; i++) {
+            if (cari == data[i]) {
+                found = true;
+                System.out.println("Data ditemukan pada urutan ke-" + i);
+            }
+        }
+        if (found != true) {
+            System.out.println("Maaf, data tidak ditemukan");
+        }
+    }
+
+    public static void s3() {
+        System.out.println("\n----Praktikum 3----");
+        int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int min = data[0];
+        int max = data[0];
+        System.out.println("Data pada Array = ");
+        for (int i = 0; i < data.length; i++) {
+            System.out.print(data[i] + "\t");
+            if (data[i] > min) {
+                min = data[i];
+            }
+            if( data[i] < max){
+                max = data[i];
+            }
+        }
+        System.out.println("\nData terbesar dari array adalah = " + min);
+        System.out.println("Data terkecil dari array adalah = " + max);
+    }
+
+    public static void s4() {
+        Scanner sc = new Scanner(System.in);
+        String cari;
+        System.out.println("\n----Praktikum 4----");
+        System.out.println("Ketik apa yang ingin anda katakan");
+        cari = sc.nextLine();
+
+        int a = 0;
+        for (int i = 0; i < cari.length(); i++) {
+            if (cari.charAt(i) == 'h') {
+                a++;
+            }
+        }
+        System.out.println("Jumlah huruf h ada = " + a);
+    }
+    
+    //Tugas
+
+    public static void no1() {
+        int temu;
+        int a = 0;
+        int[] angka = new int[]{29, 25, 50, 50, 29, 45, 60};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("---Tugas 1---");
+        System.out.println("Data = ");
+        for (int i = 0; i < angka.length; i++) {
+            System.out.println(angka[i] + "\t");
+            if (angka[i] < a) {
+                a = angka[i];
+            }
+        }
+        System.out.println("Masukkan angka yang ingin anda cari = ");
+        temu = sc.nextInt();
+        if (temu == 29) {
+            System.out.println("\nData yang dicari ditemukan! ada 2");
+        } else if (temu == 25) {
+            System.out.println("\nData yang dicari ditemukan! ada 1");
+        } else if (temu == 50) {
+            System.out.println("\nData yang dicari ditemukan! ada 2");
+        } else if (temu == 45) {
+            System.out.println("\nData yang dicari ditemukan! ada 1");
+        } else if (temu == 60) {
+            System.out.println("\nData yang dicari ditemukan! ada 1");
+        } else {
+            System.out.println("\nMaaf, data tidak ditemuakan :( ");
+        }
+    }
+
+    public static void no2() {
+        double rata = 0;
+        int temu;
+        int angka = 0;
+        System.out.println("\n---Tugas 2---");
+        int[] nomer = new int[]{80, 70, 60, 50, 40, 45, 20};
+        System.out.println("Data = ");
+
+        for (int i = 0; i < nomer.length; i++) {
+            System.out.println(nomer[i] + "\t");
+            if (nomer[i] < angka) {
+                angka = nomer[i];
+            }
+        }
+        for (int i = 0; i < nomer.length; i++) {
+            rata += nomer[i];
+        }
+        {
+            rata /= nomer.length;
+            System.out.println("\nRata - rata nilai adalah = " + rata);
+
+        }
+    }
+
+    public static void no3() {
+        System.out.println("\n---Tugas 3---");
+        int[] nomer = new int[]{92, 98, 76, 72, 84, 101, 39};
+        System.out.println("Nilai = ");
+        for (int i = 0; i < nomer.length; i++) {
+            System.out.println(nomer[i] + "\t");
+
+        }
+        System.out.println("\nNilai kelipatan tiga = ");
+        for (int j = 0; j < nomer.length; j++) {
+            if (nomer[j] % 3 == 0) {
+                System.out.println(nomer[j]);
+            }
+        }
+    }
+
+    public static void no4() {
+        System.out.println("\n---Tugas 4---");
+        Scanner sc = new Scanner(System.in);
+        int x = 0, y = 0, z = 0, a = 0, b = 0;
+        String huruf, vokal = new String();
+        System.out.println("Ketik sesuatu yang anda pikirkan = ");
+        vokal = sc.nextLine();
+        char tchar[] = new char[vokal.length()];
+        huruf = vokal.toLowerCase();
+        for (int i = 0; i < vokal.length(); i++) {
+            if (huruf.charAt(i) == 'a') {
+                x++;
+            }
+            if (huruf.charAt(i) == 'i') {
+                y++;
+            }
+            if (huruf.charAt(i) == 'u') {
+                z++;
+            }
+            if (huruf.charAt(i) == 'e') {
+                a++;
+            }
+            if (huruf.charAt(i) == 'o') {
+                b++;
+
+            }
+        }
+        System.out.println("vokal a = " + x);
+        System.out.println("vokal i = " + y);
+        System.out.println("vokal u = " + z);
+        System.out.println("vokal e = " + a);
+        System.out.println("vokal o = " + b);
+    }
